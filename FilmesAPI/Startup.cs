@@ -30,10 +30,6 @@ namespace FilmesAPI
         {
             services.AddDbContext<FilmeContext>(opts => opts.UseMySQL(Configuration.GetConnectionString("FilmeConnection")));
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FilmesAPI", Version = "v1" });
-            });
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
